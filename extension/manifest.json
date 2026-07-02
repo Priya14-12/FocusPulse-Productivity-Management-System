@@ -1,0 +1,35 @@
+{
+  "manifest_version": 3,
+  "name": "FocusPulse Productivity Tracker",
+  "version": "1.0.0",
+  "description": "Track active browsing habits, run Pomodoro focus timer blocks, block distracting sites, and sync with your dashboard.",
+  "permissions": [
+    "tabs",
+    "storage",
+    "alarms",
+    "notifications",
+    "webNavigation"
+  ],
+  "host_permissions": [
+    "http://localhost:5000/*",
+    "*://*/*"
+  ],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "options_page": "options/options.html",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}

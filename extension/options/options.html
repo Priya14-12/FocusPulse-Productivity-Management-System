@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FocusPulse Options</title>
+  <link rel="stylesheet" href="options.css">
+</head>
+<body>
+  <div class="app-layout">
+    <!-- Sidebar header -->
+    <aside class="sidebar">
+      <div class="logo">
+        <span class="logo-icon">⚡</span>
+        <h1>FocusPulse</h1>
+      </div>
+      <p class="subtitle">Extension Settings</p>
+      
+      <div id="sync-badge" class="sync-badge">Disconnected</div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <!-- Sync Token Config Card -->
+      <section class="card">
+        <h2>Account Sync Setup</h2>
+        <p>Connecting the extension syncs your custom block lists, settings, and goals from your main web dashboard.</p>
+        <form id="token-form" class="form-row">
+          <input type="password" id="token-input" placeholder="Paste your security token here..." required />
+          <button type="submit" class="btn btn-primary">Connect & Sync</button>
+          <button type="button" id="btn-disconnect" class="btn btn-secondary hidden">Disconnect</button>
+        </form>
+      </section>
+
+      <!-- Preferences and Goals -->
+      <section id="settings-section" class="disabled-section">
+        <form id="settings-form">
+          <div class="grid-layout">
+            <!-- Goals preferences -->
+            <div class="card">
+              <h2>Daily Target Goals</h2>
+              
+              <div class="form-group">
+                <label for="goal-productive">Daily Productive Target (Hours)</label>
+                <input type="number" id="goal-productive" min="1" max="24" value="4" />
+              </div>
+
+              <div class="form-group">
+                <label for="goal-distracting">Daily Distracting Limit (Hours)</label>
+                <input type="number" id="goal-distracting" min="0" max="24" value="1" />
+              </div>
+
+              <div class="form-group">
+                <label for="goal-focus">Focus Sessions Target</label>
+                <input type="number" id="goal-focus" min="1" max="10" value="3" />
+              </div>
+            </div>
+
+            <!-- Configuration preference -->
+            <div class="card">
+              <h2>Preferences</h2>
+              
+              <div class="form-group">
+                <label for="focus-duration">Default Focus Session (Minutes)</label>
+                <select id="focus-duration">
+                  <option value="25">25 minutes</option>
+                  <option value="50">50 minutes</option>
+                  <option value="60">60 minutes</option>
+                </select>
+              </div>
+
+              <div class="form-group checkbox-group">
+                <input type="checkbox" id="notify-enabled" checked />
+                <label for="notify-enabled">Show alarms notifications</label>
+              </div>
+
+              <div class="form-group">
+                <label for="theme-preference">Interface Theme</label>
+                <select id="theme-preference">
+                  <option value="dark">Dark Theme</option>
+                  <option value="light">Light Theme</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          
+          <div style="margin-top: 16px; display: flex; justify-content: flex-end;">
+            <button type="submit" class="btn btn-primary">Save Preferences</button>
+          </div>
+        </form>
+      </section>
+
+      <!-- Custom Block List section -->
+      <section id="blocklist-section" class="card disabled-section">
+        <h2>Custom Blocked Websites</h2>
+        <p>Add host domains you want to prevent yourself from visiting. These rules will block access immediately.</p>
+        
+        <form id="add-block-form" class="form-row" style="margin: 16px 0;">
+          <input type="text" id="block-domain-input" placeholder="e.g., twitter.com, reddit.com" required />
+          <button type="submit" class="btn btn-danger">Block Domain</button>
+        </form>
+
+        <div id="block-list-container" class="block-list">
+          <!-- Populated dynamically -->
+          <div class="empty-state">No blocked websites yet.</div>
+        </div>
+      </section>
+    </main>
+  </div>
+  <script src="options.js"></script>
+</body>
+</html>

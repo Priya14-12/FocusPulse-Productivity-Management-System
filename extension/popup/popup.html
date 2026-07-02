@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FocusPulse Popup</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="brand">
+      <div class="logo-box">⚡</div>
+      <h2>FocusPulse</h2>
+    </div>
+    <div id="sync-status" class="badge">Offline</div>
+  </header>
+
+  <main class="container">
+    <!-- Unauthenticated View -->
+    <section id="auth-section" class="card hidden">
+      <h3>Account Connection Required</h3>
+      <p>Log in from the FocusPulse Dashboard, then paste your security sync key below to synchronize habits across devices.</p>
+      <form id="login-form">
+        <input type="password" id="sync-token-input" placeholder="Paste security token here..." required />
+        <button type="submit" class="btn btn-primary">Connect Account</button>
+      </form>
+    </section>
+
+    <!-- Main Extension Stats View -->
+    <section id="stats-section">
+      <!-- Active site tracker -->
+      <div class="card active-tab-card">
+        <span class="label">Current Website</span>
+        <div id="current-domain" class="value">Browsing details...</div>
+        <div id="current-duration" class="subvalue">00:00</div>
+      </div>
+
+      <!-- Stats Grid -->
+      <div class="stats-grid">
+        <div class="card stat-card">
+          <span class="label">Productive Time</span>
+          <div id="productive-time" class="value text-productive">0m</div>
+        </div>
+        <div class="card stat-card">
+          <span class="label">Distracting Time</span>
+          <div id="distracting-time" class="value text-distracting">0m</div>
+        </div>
+      </div>
+
+      <!-- Productivity Score Progress -->
+      <div class="card score-card">
+        <div class="score-header">
+          <span class="label">Productivity Score</span>
+          <span id="prod-score-val" class="score-num">0%</span>
+        </div>
+        <div class="progress-bar-bg">
+          <div id="prod-score-bar" class="progress-bar" style="width: 0%"></div>
+        </div>
+      </div>
+
+      <!-- Focus Mode Timer Controls -->
+      <div class="card focus-card">
+        <h3>Focus Mode</h3>
+        
+        <!-- Timer Display (Hidden by default, shown during active sessions) -->
+        <div id="focus-timer-display" class="timer-display hidden">
+          <div id="timer-digits">25:00</div>
+          <div class="timer-actions">
+            <button id="btn-pause-focus" class="btn btn-secondary">Pause</button>
+            <button id="btn-stop-focus" class="btn btn-danger">Stop</button>
+          </div>
+        </div>
+
+        <!-- Setup Controls (Hidden during sessions) -->
+        <div id="focus-setup-display">
+          <div class="form-group">
+            <label for="focus-preset">Timer Preset</label>
+            <select id="focus-preset">
+              <option value="25">25 Minutes</option>
+              <option value="50">50 Minutes</option>
+              <option value="60">60 Minutes</option>
+            </select>
+          </div>
+          <button id="btn-start-focus" class="btn btn-primary w-full">Start Focus Session</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <button id="btn-open-dashboard" class="link-btn">Go to Dashboard</button>
+    <span>•</span>
+    <button id="btn-open-options" class="link-btn">Options</button>
+  </footer>
+
+  <script src="popup.js"></script>
+</body>
+</html>
