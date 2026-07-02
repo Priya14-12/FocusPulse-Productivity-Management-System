@@ -1,17 +1,16 @@
 # FocusPulse: Productivity Management Chrome Extension
 
-FocusPulse is a complete, production-ready productivity management system designed to help users track their active browsing habits, block distracting sites, execute Pomodoro focus sessions, and visualize their productivity analytics. The system integrates a Manifest V3 Chrome Extension with a MERN stack web application (React, Node.js, Express, MongoDB Atlas) to ensure real-time synchronization of browsing activity, settings, and goals across devices.
+**COMPANY:** CODTECH IT SOLUTIONS
 
----
+**NAME:** K.V. NANDAPRIYA
 
-## 1. Internship Details
+**INTERN ID:** CTIS9805
 
-*   **COMPANY**: CODTECH IT SOLUTIONS
-*   **NAME**: K.V. NANDAPRIYA
-*   **INTERN ID**: CTIS9805
-*   **DOMAIN**: MERN STACK WEB DEVELOPMENT
-*   **DURATION**: 8 WEEKS
-*   **MENTOR**: NEELA SANTHOSH
+**DOMAIN:** MERN STACK WEB DEVELOPMENT
+
+**DURATION:** 8 WEEKS
+
+**MENTOR:** NEELA SANTHOSH
 
 ---
 
